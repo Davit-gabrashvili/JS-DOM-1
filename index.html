@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div class="container">
+        <header class="nav-menu">
+            
+        </header>
+        <div class="registration">
+            
+        </div>
+    </div>
+
+    <script>
+        var divElements = document.getElementsByClassName("registration");
+        var divElement = divElements[0]; 
+
+        var frm = document.createElement("form");;
+        divElement.appendChild(frm);
+        
+        divElement.style.backgroundColor = '#13265c';
+        divElement.style.color = "white";
+        divElement.style.marginBottom = "35px";
+        divElement.style.width = "60%";
+        divElement.style.height = "250px";
+
+
+        var inputElement1 = document.createElement("input");
+        inputElement1.setAttribute("type", "text");
+        inputElement1.setAttribute("placeholder", "Username");
+        inputElement1.style.width = "80%";
+        inputElement1.style.height = "30px";
+        inputElement1.style.marginTop = "35px";
+        inputElement1.style.marginLeft = "10%";
+
+
+        frm.appendChild(inputElement1);
+
+        var inputElement2 = document.createElement("input");
+        inputElement2.setAttribute("type", "password");
+        inputElement2.setAttribute("placeholder", "Password");
+        inputElement2.style.width = "80%";
+        inputElement2.style.height = "30px";
+        inputElement2.style.marginTop = "1%";
+        inputElement2.style.marginLeft = "10%";
+
+        frm.appendChild(inputElement2);
+
+        var checkbox = document.createElement("input");
+        checkbox.setAttribute("type", "checkbox");
+        checkbox.style.marginLeft = '10%';
+
+        frm.appendChild(checkbox);
+
+
+        var labelElement = document.createElement("label");
+        labelElement.style.color = "rgb(255, 250, 250)";
+        labelElement.style.left = "5px";
+        labelElement.textContent = "Remember me";
+
+        frm.appendChild(labelElement);
+
+
+        var buttonElement = document.createElement("button");
+        buttonElement.textContent = "LOGIN";
+        buttonElement.style.color = "rgb(255, 250, 250)";
+        buttonElement.style.backgroundColor = "rgb(0, 0, 51)";
+        buttonElement.style.width = "40%";
+        buttonElement.style.height = "30px";
+        buttonElement.style.marginTop = "5%";
+        buttonElement.style.marginLeft = "calc(50% - 20px)";
+        buttonElement.style.borderRadius = "2px";
+
+        frm.appendChild(buttonElement);
+
+
+
+
+        function displayAlert() {
+            alert("The customer has successfully registered.");
+            }
+
+            function changeColor() {
+            buttonElement.style.backgroundColor = "blue";
+            }
+
+            function backColor() {
+                buttonElement.style.backgroundColor = "rgb(0, 0, 51)";
+            };
+
+            function convertToUpperCase() {
+            var username = inputElement1.value;
+            inputElement1.value = username.toUpperCase();
+            }
+
+
+            buttonElement.addEventListener("click", displayAlert);
+            buttonElement.addEventListener("mouseover", changeColor);
+            buttonElement.addEventListener("mouseout", backColor);
+            inputElement1.addEventListener("keydown", convertToUpperCase);
+            
+    </script>
+</body>
+</html>
